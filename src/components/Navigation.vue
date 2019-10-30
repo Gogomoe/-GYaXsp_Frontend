@@ -1,18 +1,12 @@
 <template>
     <div id="nav">
-        <div class="row">
+        <div class="body-row">
             <ul class="nav-list router-list">
                 <li>
-                    <router-link
-                            to="/"
-                            v-bind:class="{ 'nav-active': this.$route.path === '/' }">首页
-                    </router-link>
+                    <router-link to="/" class="link">首页</router-link>
                 </li>
                 <li>
-                    <router-link
-                            to="/problem"
-                            v-bind:class="{ 'nav-active': this.$route.path === '/problem' }">题库
-                    </router-link>
+                    <router-link to="/problem" class="link">题库</router-link>
                 </li>
             </ul>
             <NavigationUser class="nav-list user-list"/>
@@ -52,7 +46,7 @@
         display: flex;
         height: 100%;
 
-        a {
+        .link {
             display: block;
             box-sizing: border-box;
             line-height: 42px;
@@ -69,7 +63,7 @@
                 background: #f8f8f8;
             }
 
-            &.nav-active {
+            &.router-link-exact-active {
                 border-color: #ed5f82;
             }
         }

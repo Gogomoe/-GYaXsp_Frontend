@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <div class="row">
+        <div class="body-row">
             <div class="main-columns">
                 <div class="announcement section">
                     <div class="section-header">

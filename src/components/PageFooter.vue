@@ -1,6 +1,6 @@
 <template>
     <footer id="footer">
-        <div class="row">
+        <div class="body-row">
             <div class="footer-links">
                 <div class="category">
                     <h1>开发</h1>
@@ -42,7 +42,7 @@
         background: rgba(255, 255, 255, .98);
     }
 
-    .row {
+    .body-row {
         @include flex-vertical;
     }
 

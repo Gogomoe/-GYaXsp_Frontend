@@ -1,6 +1,6 @@
 <template>
     <div class="no-found">
-        <div class="row">
+        <div class="body-row">
             <h1>No Found</h1>
         </div>
     </div>

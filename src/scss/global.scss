@@ -1,3 +1,5 @@
+$primary-color: #5f9fd6;
+
 body {
   margin: 0;
   font-family: Open Sans, Seravek, Segoe UI, Verdana, PingFang SC, Hiragino Sans GB, Lantinghei SC, Microsoft Yahei, WenQuanYi Micro Hei, sans, serif;
@@ -48,13 +50,13 @@ li {
 }
 
 @media only screen and (min-width: 1000px) {
-  .row {
+  .body-row {
     width: 980px;
   }
 }
 
 @media only screen and (min-width: 1250px) {
-  .row {
+  .body-row {
     width: 1200px;
   }
 }
@@ -110,4 +112,55 @@ h2.section-title {
 
 .section-body {
   padding: .7em .9375rem 1.5625rem;
+}
+
+.link, .button {
+  cursor: pointer;
+}
+
+.button {
+  border: none;
+  outline: none;
+
+  font-size: .875rem;
+  line-height: 2.0625rem;
+  height: 2.1875rem;
+  padding: 0 1.5625rem;
+  margin: 0 0 1rem;
+  border-radius: 1.09375rem;;
+}
+
+.button.primary {
+  color: #fff;
+  border-color: $primary-color;
+  background-color: $primary-color;
+}
+
+.form-row {
+  label {
+    color: #666;
+    display: block;
+  }
+
+  input {
+    display: block;
+    outline: none;
+  }
+
+  input[type="text"], input[type="password"] {
+    height: 2rem;
+    border: none;
+    border-bottom: 2px solid rgba(85, 85, 85, .4);
+    margin: .3rem 0 .9rem;
+
+    transition: border-color .2s;
+
+    &:active, &:focus {
+      border-color: $primary-color;
+    }
+  }
+
+  & > * {
+    width: 100%;
+  }
 }

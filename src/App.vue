@@ -3,20 +3,22 @@
         <Navigation/>
         <router-view class="main"/>
         <PageFooter/>
+        <LoginDialog/>
     </div>
 </template>
 <script>
     import Navigation from "./components/Navigation";
     import PageFooter from "./components/PageFooter";
+    import LoginDialog from "./components/LoginDialog";
 
     export default {
-        components: {PageFooter, Navigation}
+        components: {PageFooter, Navigation, LoginDialog}
     }
 </script>
 <style lang="scss">
     #app {
-        width: 100vw;
         @include flex-vertical;
+        width: 100vw;
         min-height: 100vh;
     }
 
