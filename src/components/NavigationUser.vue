@@ -19,7 +19,6 @@
 
 </template>
 <script>
-    //TODO finish login and sign up page
     import {mapGetters, mapMutations, mapState} from "vuex";
 
     export default {

@@ -119,15 +119,22 @@ h2.section-title {
 }
 
 .button {
+  display: inline-block;
+  box-sizing: border-box;
   border: none;
   outline: none;
 
   font-size: .875rem;
-  line-height: 2.0625rem;
-  height: 2.1875rem;
-  padding: 0 1.5625rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  padding: 0 1.6rem;
   margin: 0 0 1rem;
-  border-radius: 1.09375rem;;
+  border-radius: 1.1rem;
+  text-align: center;
+}
+
+.button.button-border {
+  line-height: 1.8rem;
 }
 
 .button.primary {
