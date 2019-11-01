@@ -14,6 +14,12 @@ export default {
             state.avatar = user.avatar;
             state.roles = user.roles.slice();
             state.perms = user.perms.slice();
+        },
+        clearUser(state) {
+            state.username = null;
+            state.avatar = null;
+            state.roles = [];
+            state.perms = [];
         }
     },
     actions: {
@@ -24,7 +30,8 @@ export default {
 
             let response = await fetch(`${server}/api/session`, {
                 method: 'POST',
-                body: formData
+                body: formData,
+                credentials: 'include'
             }).then(response => response.json());
 
             if (response.success) {
@@ -36,12 +43,27 @@ export default {
         },
         async updateUser({dispatch, commit, getters, rootGetters}, {username}) {
 
-            let response = await fetch(`${server}/api/user/${username}`).then(response => response.json());
+            let response = await fetch(`${server}/api/user/${username}`, {
+                credentials: 'include'
+            }).then(response => response.json());
 
             if (response.success) {
                 commit('updateUser', response.user)
             } else {
                 throw response.error;
+            }
+
+        },
+        async updateSession({dispatch, commit, getters, rootGetters}) {
+
+            let response = await fetch(`${server}/api/session`, {
+                credentials: 'include'
+            }).then(response => response.json());
+
+            if (response.session) {
+                commit('updateUser', response.user)
+            } else {
+                commit('clearUser', response.user)
             }
 
         }

@@ -12,7 +12,10 @@
     import LoginDialog from "./components/LoginDialog";
 
     export default {
-        components: {PageFooter, Navigation, LoginDialog}
+        components: {PageFooter, Navigation, LoginDialog},
+        mounted() {
+            this.$store.dispatch('user/updateSession');
+        }
     }
 </script>
 <style lang="scss">
