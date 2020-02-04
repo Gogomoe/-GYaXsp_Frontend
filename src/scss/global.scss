@@ -1,4 +1,5 @@
 $primary-color: #5f9fd6;
+$active-color: #ed5f82;
 
 body {
   margin: 0;
@@ -31,6 +32,16 @@ a, a:active, a:hover, a:visited {
 
 li {
   list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+  font-weight: 400;
 }
 
 @mixin center-both {
@@ -114,6 +125,35 @@ h2.section-title {
   padding: .7em .9375rem 1.5625rem;
 }
 
+.section-table {
+  padding: .7em 0 1.5625rem;
+  font-size: .875rem;
+
+  tr {
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  tr:nth-child(2n) {
+    background-color: #f4f4f4;
+  }
+
+  td {
+    line-height: 1.625rem;
+    padding: .3125rem .625rem;
+  }
+
+  th {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    padding: .625rem .625rem;
+  }
+
+  td:first-child, th:first-child {
+    padding-left: .9375rem;
+  }
+}
+
 .link, .button {
   cursor: pointer;
 }
@@ -128,13 +168,16 @@ h2.section-title {
   height: 2.2rem;
   line-height: 2.2rem;
   padding: 0 1.6rem;
-  margin: 0 0 1rem;
   border-radius: 1.1rem;
   text-align: center;
 }
 
 .button.button-border {
   line-height: 1.8rem;
+}
+
+.button.no-radius {
+  border-radius: 0;
 }
 
 .button.primary {

@@ -6,7 +6,7 @@
                     <router-link to="/" class="link">首页</router-link>
                 </li>
                 <li>
-                    <router-link to="/problem" class="link">题库</router-link>
+                    <router-link to="/problems/1" class="link">题库</router-link>
                 </li>
             </ul>
             <NavigationUser class="nav-list user-list"/>
@@ -59,12 +59,12 @@
 
             &:hover {
                 text-decoration: none;
-                border-color: #5f9fd6;
+                border-color: $primary-color;
                 background: #f8f8f8;
             }
 
             &.router-link-exact-active {
-                border-color: #ed5f82;
+                border-color: $active-color;
             }
         }
     }
