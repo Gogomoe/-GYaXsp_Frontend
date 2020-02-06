@@ -1,43 +1,56 @@
 <template>
-    <div class="pager-wrapper" v-if="totalPage > 0">
-        <div class="pager-pages">
+    <div class="m-pager" v-if="totalPage > 0">
+        <div class="m-pager-pages">
             <router-link
+                    class="u-pager-link"
                     v-show="currentPage > 1"
                     v-bind:to="linkTo(1)">
                 第一页
             </router-link>
 
-            <span v-show="pages[0] > 1">...</span>
+            <span
+                    class="u-pager-text"
+                    v-show="pages[0] > 1">
+                ...
+            </span>
 
             <router-link
+                    class="u-pager-link"
                     v-show="currentPage > 1 && showPrev"
                     v-bind:to="linkTo(currentPage - 1)">
                 前一页
             </router-link>
 
             <router-link v-for="page in pages"
-                         v-bind:class="{active: currentPage === page }"
+                         class="u-pager-link"
+                         v-bind:class="{'z-pager-active': currentPage === page }"
                          v-bind:to="linkTo(page)">
                 {{page}}
             </router-link>
 
             <router-link
+                    class="u-pager-link"
                     v-show="currentPage < totalPage && showNext"
                     v-bind:to="linkTo(currentPage + 1)">
                 后一页
             </router-link>
 
-            <span v-show="pages[pages.length-1] < totalPage">...</span>
+            <span
+                    class="u-pager-text"
+                    v-show="pages[pages.length-1] < totalPage">
+                ...
+            </span>
 
             <router-link
+                    class="u-pager-link"
                     v-show="currentPage < totalPage"
                     v-bind:to="linkTo(totalPage)">
                 末页
             </router-link>
         </div>
-        <div v-if="showJump" v-show="totalPage > 1" class="pager-jump">
-            <span>共<em class="jump-total">{{totalPage}}</em>页 ，跳至</span>
-            <input type="number" :min="1" :max="totalPage" v-model="jumpPage" class="jump-input">
+        <div v-if="showJump" v-show="totalPage > 1" class="m-pager-jump">
+            <span>共<em class="u-pager-jump-total">{{totalPage}}</em>页 ，跳至</span>
+            <input type="number" :min="1" :max="totalPage" v-model="jumpPage" class="u-pager-jump-input">
             <span>页</span>
             <router-link v-bind:to="linkTo(jumpPage)">
                 转跳
@@ -117,34 +130,34 @@
     }
 </script>
 
-<style scoped lang="scss">
-    .pager-pages {
+<style lang="scss">
+    .m-pager-pages {
         width: 100%;
         text-align: center;
+    }
 
-        & > * {
-            display: inline-block;
-            padding: 0.375rem 0.625rem;
+    .u-pager-text, .u-pager-link {
+        display: inline-block;
+        padding: 0.375rem 0.625rem;
+        color: #a7a7a7;
+        border-top: solid 3px transparent;
+    }
+
+    .u-pager-link {
+        transition: all .3s;
+
+        &:not(:hover) {
             color: #a7a7a7;
-            border-top: solid 3px transparent;
         }
 
-        & > a {
-            transition: all .3s;
-
-            &:visited {
-                color: #a7a7a7;
-            }
-
-            &:hover {
-                color: #555;
-                border-top-color: $primary-color;
-                text-decoration: none;
-            }
-
+        &:hover {
+            color: $link-color;
+            text-decoration: none;
+            background: $active-bg-color;
+            border-top-color: $primary-color;
         }
 
-        & > .active {
+        &.z-pager-active {
             color: $active-color;
             border-top-color: $active-color;
 

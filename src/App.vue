@@ -21,6 +21,7 @@
 <style lang="scss">
     #app {
         @include flex-vertical;
+        align-items: stretch;
         width: 100vw;
         min-height: 100vh;
     }

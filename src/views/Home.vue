@@ -1,17 +1,17 @@
 <template>
-    <div class="home">
-        <div class="body-row">
-            <div class="main-columns">
-                <div class="announcement section">
-                    <div class="section-header">
-                        <h1 class="section-title">公告</h1>
+    <div class="m-home">
+        <div class="g-body-row">
+            <div class="g-main-columns">
+                <div class="m-announcement m-section">
+                    <div class="m-section-header">
+                        <h1 class="m-section-title">公告</h1>
                     </div>
-                    <div class="section-body">
+                    <div class="m-section-body">
                         <p>开发中</p>
                     </div>
                 </div>
             </div>
-            <div class="side-columns">
+            <div class="g-side-columns">
 
             </div>
         </div>
@@ -25,13 +25,13 @@
     };
 </script>
 
-<style scoped lang="scss">
-    .home {
+<style lang="scss">
+    .m-home {
         display: flex;
         justify-content: center;
     }
 
-    .announcement {
+    .m-announcement {
         flex-grow: 1;
     }
 </style>

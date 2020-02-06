@@ -1,17 +1,17 @@
 <template>
 
-    <ul v-if="!isLogin" class="nav-login">
+    <ul v-if="!isLogin" class="m-nav-login">
         <li>
-            <div class="link" v-on:click="showLoginDialog()">登录</div>
+            <div class="u-link" v-on:click="showLoginDialog()">登录</div>
         </li>
         <li>
-            <router-link to="/signup" class="link">注册</router-link>
+            <router-link to="/signup" class="u-link">注册</router-link>
         </li>
     </ul>
-    <ul v-else class="nav-user">
+    <ul v-else class="m-nav-user">
         <li>
-            <router-link v-bind:to="`/user/${username}`">
-                <img class="nav-avatar" v-bind:src="avatar" alt="avatar">
+            <router-link class="m-nav-user-link" v-bind:to="`/user/${username}`">
+                <img class="m-nav-user-avatar" v-bind:src="avatar" alt="avatar">
                 <div>{{ username }}</div>
             </router-link>
         </li>
@@ -39,16 +39,15 @@
         }
     }
 </script>
-<style scoped lang="scss">
-    .nav-user {
+<style lang="scss">
+
+    .m-nav-user {
         font-size: 1rem;
     }
 
-    .nav-user a {
-        display: flex;
-        align-items: center;
-        line-height: 45px;
-        text-decoration: none;
+    .m-nav-user-link {
+        @include center-vertical;
+        height: 100%;
 
         & > * {
             display: block;
@@ -56,7 +55,7 @@
         }
     }
 
-    .nav-avatar {
+    .m-nav-user-avatar {
         width: 36px;
         height: 36px;
         border-radius: 18px;

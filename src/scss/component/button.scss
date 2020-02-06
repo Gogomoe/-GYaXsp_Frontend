@@ -1,0 +1,28 @@
+.u-link, .u-button {
+  cursor: pointer;
+}
+
+.u-button {
+  display: inline-block;
+  box-sizing: content-box;
+  border: none;
+  outline: none;
+
+  font-size: .875rem;
+  text-decoration: none;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  padding: 0 1.6rem;
+  border-radius: 1.1rem;
+  text-align: center;
+}
+
+.u-button.no-radius {
+  border-radius: 0;
+}
+
+.u-button.primary {
+  color: #fff;
+  border-color: $primary-color;
+  background-color: $primary-color;
+}

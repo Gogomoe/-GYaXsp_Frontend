@@ -1,8 +1,8 @@
 <template>
-    <footer id="footer">
-        <div class="body-row">
-            <div class="footer-links">
-                <div class="category">
+    <footer class="m-footer">
+        <div class="g-flex-vertical g-body-row">
+            <div class="m-footer-links">
+                <div class="m-footer-link-category">
                     <h1>开发</h1>
                     <ul>
                         <li>
@@ -11,8 +11,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="extra-links">
-                <ul class="extra-links-left">
+            <div class="m-footer-extra-links">
+                <ul class="m-extra-links-left">
                     <li>
                         <router-link to="/about">关于</router-link>
                     </li>
@@ -20,7 +20,7 @@
                         <router-link to="/contact-us">联系我们</router-link>
                     </li>
                 </ul>
-                <ul class="extra-links-right">
+                <ul class="m-extra-links-right">
                     <li>
                         不知到build号是啥
                     </li>
@@ -34,23 +34,17 @@
         name: 'PageFooter'
     }
 </script>
-<style scoped lang="scss">
-    #footer {
-        display: flex;
-        justify-content: center;
-        width: 100%;
+<style lang="scss">
+    .m-footer {
+        @include center-horizontal;
         background: rgba(255, 255, 255, .98);
     }
 
-    .body-row {
-        @include flex-vertical;
-    }
-
-    .footer-links {
+    .m-footer-links {
         display: flex;
     }
 
-    .category {
+    .m-footer-link-category {
         box-sizing: border-box;
         width: 200px;
         padding: 30px 15px 50px;
@@ -69,7 +63,7 @@
         }
     }
 
-    .extra-links {
+    .m-footer-extra-links {
         padding: 1.25rem 1.5rem;
         font-size: .8125rem;
 
@@ -84,11 +78,11 @@
 
     }
 
-    .extra-links-left {
+    .m-extra-links-left {
         float: left;
     }
 
-    .extra-links-right {
+    .m-extra-links-right {
         float: right;
     }
 </style>

@@ -1,0 +1,23 @@
+.g-center-both {
+  @include center-both;
+}
+
+.g-center-vertical {
+  @include center-vertical;
+}
+
+.g-center-horizontal {
+  @include center-horizontal;
+}
+
+.g-flex-vertical {
+  @include flex-vertical;
+}
+
+.g-flex-vertical-center {
+  @include flex-vertical-center;
+}
+
+.f-relative-wrapper {
+  @include relative-wrapper;
+}

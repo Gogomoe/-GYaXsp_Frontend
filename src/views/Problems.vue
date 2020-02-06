@@ -1,41 +1,43 @@
 <template>
-    <div class="problems">
-        <div class="body-row">
-            <div class="main-columns">
-                <div class="problem-list section">
-                    <table class="section-table problems-table">
+    <div class="m-problems">
+        <div class="g-body-row">
+            <div class="g-main-columns">
+                <div class="m-problems-list m-section">
+                    <table class="m-section-table m-problems-table">
                         <tr>
-                            <th class="problem-name">题目</th>
-                            <th class="create-date">发布时间</th>
-                            <th class="example-count">样例</th>
+                            <th class="m-problems-problem-name">题目</th>
+                            <th class="m-problems-create-date">发布时间</th>
+                            <th class="m-problems-example-count">样例</th>
                         </tr>
                         <tr v-for="problem in problems" v-bind:key="problem.name">
-                            <td class="problem-name">
-                                <router-link v-bind:to="`/problem/${problem.name}`" class="link">
+                            <td class="m-problems-problem-name">
+                                <router-link v-bind:to="`/problem/${problem.name}`" class="u-link">
                                     {{ problem.name }}
                                 </router-link>
                             </td>
-                            <td class="create-date">{{ new Date(problem.create_time).toLocaleDateString() }}</td>
-                            <td class="example-count">{{ problem.example_count }}</td>
+                            <td class="m-problems-create-date">
+                                {{ new Date(problem.create_time).toLocaleDateString() }}
+                            </td>
+                            <td class="m-problems-example-count">{{ problem.example_count }}</td>
                         </tr>
                     </table>
-                    <div class="section-body">
+                    <div class="m-section-body">
                         <pager
                                 link="/problems/{Page}"
                                 v-bind:init-page="page"
                                 v-bind:total-page="pageCount"
-                                class="problems-pager">
+                                class="m-problems-pager">
                         </pager>
                     </div>
                 </div>
             </div>
-            <div class="side-columns" v-if="haveAdminPerm">
-                <div class="section">
-                    <div class="section-header">
-                        <h1 class="section-title">管理</h1>
+            <div class="g-side-columns" v-if="haveAdminPerm">
+                <div class="m-section">
+                    <div class="m-section-header">
+                        <h1 class="m-section-title">管理</h1>
                     </div>
-                    <div class="section-body">
-                        <router-link to="/problems/settings" class="button no-radius primary">
+                    <div class="m-section-body">
+                        <router-link to="/problems/settings" class="u-button no-radius primary">
                             设置
                         </router-link>
                     </div>
@@ -101,27 +103,27 @@
     }
 </script>
 
-<style scoped lang="scss">
-    .problems {
+<style lang="scss">
+    .m-problems {
         display: flex;
         justify-content: center;
     }
 
-    .problems-table {
+    .m-problems-table {
         width: 100%;
 
         tr {
             width: 100%;
         }
 
-        .create-date {
+        .m-problems-create-date {
             box-sizing: border-box;
             width: 6.5rem;
             text-align: center;
             border-left: 1px solid #e4e4e4;
         }
 
-        .example-count {
+        .m-problems-example-count {
             box-sizing: border-box;
             width: 4.375rem;
             text-align: center;
@@ -130,7 +132,7 @@
 
     }
 
-    .problems-pager {
+    .m-problems-pager {
         width: 100%;
     }
 </style>

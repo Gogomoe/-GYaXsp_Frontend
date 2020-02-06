@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: Open Sans, Seravek, Segoe UI, Verdana, PingFang SC, Hiragino Sans GB, Lantinghei SC, Microsoft Yahei, WenQuanYi Micro Hei, sans, serif;
+  font-size: 1rem;
+  line-height: 1;
+  color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre, ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a, a:active, a:hover, a:visited {
+  color: $link-color;
+}
+
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+  font-weight: 400;
+}
